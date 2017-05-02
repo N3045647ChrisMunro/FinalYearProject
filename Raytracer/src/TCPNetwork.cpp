@@ -1,5 +1,5 @@
 #include "TCPNetwork.h"
-/*
+
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <stdio.h>
@@ -42,14 +42,14 @@ void TCPNetwork::establishConnection(std::string hostname)
     //hints.ai_socktype = SOCK_STREAM; /* Datagram socket */
     //hints.ai_flags = 0;
     //hints.ai_protocol = 0;          /* Any protocol */
-/*
+
 	std::string port = std::to_string(PORT);
 
 	bool error = getaddrinfo(hostname.c_str(), port.c_str(), &hints, &res0);
 	if (error) {
        std::cerr << "Couldnt get addrinfo: " << gai_strerror(error) << std::endl;
        /*NOTREACHED*/
-/*    }
+    }
 
 	if(connect(sockfd_, res0->ai_addr, res0->ai_addrlen) < 0){
 		std::cerr << "Socket Connect Error" << std::endl;
@@ -90,4 +90,4 @@ void TCPNetwork::cleanUp()
 {
      close(sockfd_);
 }
-*/
+

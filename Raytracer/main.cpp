@@ -72,10 +72,10 @@ int main()
     //scene = loadSceneDataFromXml("Scene.xml");
 
     //Test TCP
-    //TCPNetwork *network = new TCPNetwork();
+    TCPNetwork *network = new TCPNetwork();
 
-    //network->initSocket();
-    //network->establishConnection("127.0.0.1");
+    network->initSocket();
+    network->establishConnection("127.0.0.1");
 
     Raytracer *rayTracer = new Raytracer();
 

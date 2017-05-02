@@ -29,6 +29,7 @@ class Colour
         Colour& operator*=(float value);
         Colour& operator/=(const Colour& other);
         Colour& operator/=(float value);
+        bool operator==(const Colour& other);
 
         Colour operator+() const { return *this; }
         Colour operator-() const { return Colour(-this->r, -this->g, -this->b); }

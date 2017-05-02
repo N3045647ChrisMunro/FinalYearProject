@@ -107,6 +107,14 @@ Colour& Colour::operator/=(float value)
     return *this;
 }
 
+bool Colour::operator==(const Colour& other)
+{
+    if(r == other.r && g == other.g && b == other.b)
+        return true;
+
+    return false;
+}
+
 std::ostream& operator<<(std::ostream& out, const Colour& colour)
 {
     out << "(" << colour.r << ", " << colour.g << ", " << colour.b << ")" << std::endl;

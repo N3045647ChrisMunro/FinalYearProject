@@ -10,7 +10,7 @@
 #include <iostream>
 
 
-#define PORT 4850
+#define PORT 8001
 #define BUFF_SIZE 1024
 
 TCPNetwork::TCPNetwork()
@@ -55,7 +55,7 @@ void TCPNetwork::establishConnection(std::string hostname)
 		std::cerr << "Socket Connect Error" << std::endl;
     }
     else{
-        std::cout << "Connected To Server (Linux)" << std::endl;
+        std::cout << "Connected To Master Node" << std::endl;
 	}
 }
 
@@ -90,4 +90,5 @@ void TCPNetwork::cleanUp()
 {
      close(sockfd_);
 }
+
 */

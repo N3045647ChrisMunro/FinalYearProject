@@ -11,7 +11,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
 Image::Image()
 {
     //ctor
@@ -43,7 +42,7 @@ Image::Image(int width, int height, Colour backgroundColour)
 
         //Assign the bg colour
         for(int j = 0; j < height_; j++){
-            raster_[i][j] = backgroundColour;
+            raster_[i][j] = Colour(-1, -1, -1);
         }
 
     }
@@ -75,6 +74,20 @@ void Image::gammaCorrect(float gamma)
             raster_[i][j] = Colour(pow(temp.r, power), pow(temp.g, power), pow(temp.b, power));
         }
     }
+}
+
+bool Image::checkIsFilled()
+{
+    for(unsigned int i = 0; i < width_; i++){
+        for(unsigned int j = 0; j < height_; j++){
+
+            if(raster_[i][j] == Colour(-1, -1, -1)){
+                return false;
+            }
+
+        }
+    }
+    return true;
 }
 
 void Image::saveImage(const char* filename)

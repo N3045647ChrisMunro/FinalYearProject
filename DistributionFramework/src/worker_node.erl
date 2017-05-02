@@ -36,18 +36,19 @@ accept_connection(LSocket, ListOfWorkers, NodePid)->
 	NewDict = dict:store(WorkerID, ASocket, ListOfWorkers),
 
 	io:format("Worker ID ~p~n", [WorkerID]),
-	spawn(fun()-> handler(ASocket, NewDict) end),
+	spawn(fun()-> handler(ASocket, NewDict, NodePid) end),
 	accept_connection(LSocket, NewDict, NodePid).
 
 %Handles TCP messages
-handler(ASocket, ListOfWorkers)->
+handler(ASocket, ListOfWorkers, NodePid)->
 	
-	io:format("Handler ~p~n", [dict:size(ListOfWorkers)]).
+	io:format("Handler ~p~n", [dict:size(ListOfWorkers)]),
+	NodePid ! {hello}.
 
 %Handles Node Messages
 message_router()->
 	
-	io:format("Message Router ~n"),
+	io:format("Message Router waiting for message ~n"),
 	receive
 
 		{reg_accpeted}->
@@ -55,6 +56,9 @@ message_router()->
 
 		{reg_failed, Reason}->
 			io:format("Reg Failed: ~p~n", [Reason]);
+
+		{hello}->
+			io:format("got here ~n");
 
 		_->
 			io:format("Unkown Message ~n")

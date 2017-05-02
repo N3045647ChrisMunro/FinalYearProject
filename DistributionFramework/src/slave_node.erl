@@ -45,12 +45,12 @@ message_router(ListOfWorkerNodes, MasterNodeName)->
 					error->
 						%Carry out registration
 						%% Add the Node to the Dictionary
-      			NewDict = dict:store(WorkerRegID, WorkerNodeName, ListOfWorkerNodes),
-        		io:format("ListOfWorkerNodes: ~p ~n", [dict:fetch_keys(NewDict)]),
+      					NewDict = dict:store(WorkerRegID, WorkerNodeName, ListOfWorkerNodes),
+        				io:format("ListOfWorkerNodes: ~p ~n", [dict:fetch_keys(NewDict)]),
 
 						%Notify Slave node
 						From ! {reg_accepted},
-        		message_router(NewDict, MasterNodeName)					
+        				message_router(NewDict, MasterNodeName)					
 
 
 				end;

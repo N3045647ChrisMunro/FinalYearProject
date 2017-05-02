@@ -26,6 +26,7 @@ class Image
 
         // return false if x or y are out of bounds
         bool set(int x, int y, const Colour& colour);
+        bool checkIsFilled();
 
         void gammaCorrect(float gamma);
 
