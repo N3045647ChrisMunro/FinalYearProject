@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<Scene>
+    <!--Scene Contents and Information-->
+    <Camera>
+        <Position x="0" y="10" z="10" />
+        <Direction x="0" y="0" z="-1" />
+        <UpVector x="0" y="-1" z="-0" />
+        <RightVector x="1" y="-0" z="0" />
+        <Dimensions Width="1.5" Height="0.999999" />
+    </Camera>
+    <Objects>
+        <Plane>
+            <Position x="0" y="0" z="0" />
+            <Normal x="0" y="1" z="0" />
+            <Colour r="114" g="106" b="67" />
+        </Plane>
+        <Sphere>
+            <Position x="20" y="20" z="-35" />
+            <Radius r="5" />
+            <Colour r="255" g="0" b="0" />
+        </Sphere>
+        <Sphere>
+            <Position x="-20" y="15" z="-55" />
+            <Radius r="15" />
+            <Colour r="0" g="255" b="255" />
+        </Sphere>
+        <Sphere>
+            <Position x="0" y="20" z="-75" />
+            <Radius r="20" />
+            <Colour r="255" g="0" b="0" />
+        </Sphere>
+    </Objects>
+    <Lights>
+        <Light>
+            <Position x="35" y="25" z="-10" />
+            <Colour r="194" g="150" b="224" />
+            <Intensity i="0.3" />
+        </Light>
+        <Light>
+            <Position x="0" y="5" z="-15" />
+            <Colour r="194" g="150" b="224" />
+            <Intensity i="0.3" />
+        </Light>
+        <Light>
+            <Position x="-30" y="35" z="-5" />
+            <Colour r="194" g="150" b="224" />
+            <Intensity i="0.85" />
+        </Light>
+    </Lights>
+    <!--Scene Settings-->
+    <Settings>
+        <AASampling aa="1" />
+        <Grade grade="70" />
+        <Image>
+            <Dimensions Width="1080" Height="720" />
+            <Colour r="0" g="0" b="0" />
+        </Image>
+    </Settings>
+</Scene>
